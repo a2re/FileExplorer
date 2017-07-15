@@ -1,0 +1,8 @@
+<md-sidenav #sidenav mode="sidenav" class="app-sidenav" [opened]="isVisible">
+  <md-list>
+    <md-list-item *ngFor="let d of directories" (click)="showDirectory(d)">
+      <md-icon md-list-icon>folder</md-icon>
+      <span>{{d}}</span>
+    </md-list-item>
+  </md-list>
+</md-sidenav>

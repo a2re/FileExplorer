@@ -1,0 +1,12 @@
+<md-toolbar color="primary">
+    <button class="app-icon-button" (click)="toggleSideBar()">
+      <md-icon class="material-icons app-toolbar-menu">menu</md-icon>
+    </button> File Explorer
+    <span class="app-toolbar-filler"></span>
+</md-toolbar>
+<div layout="column" class="container">
+    <md-sidenav-container class="sidenav">
+        <app-sidenav></app-sidenav>
+        <!-- <app-chat-box></app-chat-box> -->
+    </md-sidenav-container>
+</div>
