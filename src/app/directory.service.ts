@@ -7,8 +7,13 @@ export class DirectoryService {
 
   constructor(private http: Http) { }
 
-  getSubDirectories(sourcePath: string): Observable<any> {
-    return this.http.get('/api/directories/' + encodeURIComponent(sourcePath)).map((response: Response) => response.json());
+  getSubDirectories(sourcePath): Observable<any> {
+    return this.http.get('/api/directories/' + sourcePath).map((response: Response) => response.json());
+  }
+
+  getDirectoryContent(sourcePath): Observable<any> {
+    console.log(sourcePath)
+    return this.http.get("/api/directoryContent/" + sourcePath).map(res => res.json());
   }
 
 }

@@ -14,12 +14,16 @@ import { HttpModule } from "@angular/http";
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
 import { MdIconModule } from '@angular/material';
+import { ViewerComponent } from './viewer/viewer.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SidenavComponent
+    SidenavComponent,
+    ViewerComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,

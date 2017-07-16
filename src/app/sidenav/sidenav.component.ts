@@ -12,13 +12,13 @@ export class SidenavComponent implements OnInit {
   constructor(private directoryService: DirectoryService) { }
 
   ngOnInit() {
-    this.directoryService.getSubDirectories("/").subscribe(data => {
+    this.directoryService.getSubDirectories(null).subscribe(data => {
       this.directories = data;
     })
   }
 
-  showDirectory(dirPath) {
-    
+  openDirectory(dirPath) {
+    this.directoryService.getDirectoryContent(dirPath);
   }
 
 }

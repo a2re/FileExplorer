@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="viewerContainer">
+    <div *ngFor="let f of content">
+      <div *ngIf="f.isDirectory" (dblclick)="openDirectory(f)">
+        <md-icon>folder</md-icon> {{f.name}}
+      </div>
+      <div *ngIf="!f.isDirectory">
+        <md-icon *ngIf="!f.isDirectory">insert drive file</md-icon> {{f.name}}
+      </div>
+    </div>
+  </div>
+</div>
