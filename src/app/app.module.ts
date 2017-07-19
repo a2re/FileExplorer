@@ -13,9 +13,10 @@ import { DirectoryService } from "./directory.service";
 import { HttpModule } from "@angular/http";
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
-import { MdIconModule } from '@angular/material';
+import { MdIconModule, MdTableModule } from '@angular/material';
 import { ViewerComponent } from './viewer/viewer.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { TreeModule } from 'angular2-tree-component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     routing,
     MaterialModule,
     MdSidenavModule,
-    BrowserAnimationsModule
+    MdTableModule,
+    BrowserAnimationsModule,
+    TreeModule
   ],
   providers: [
     DirectoryService

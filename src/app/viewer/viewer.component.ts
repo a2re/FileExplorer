@@ -13,9 +13,8 @@ export class ViewerComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private directoryService: DirectoryService) { }
 
   ngOnInit() {
-    let path = this.route.params.subscribe(params => {
+    this.route.params.subscribe(params => {
       let path = params['path'];
-      console.log(path)
       this.directoryService.getDirectoryContent(path).subscribe(data => {
         this.content = data;
       });

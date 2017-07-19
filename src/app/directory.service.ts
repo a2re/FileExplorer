@@ -12,7 +12,6 @@ export class DirectoryService {
   }
 
   getDirectoryContent(sourcePath): Observable<any> {
-    console.log(sourcePath)
     return this.http.get("/api/directoryContent/" + sourcePath).map(res => res.json());
   }
 

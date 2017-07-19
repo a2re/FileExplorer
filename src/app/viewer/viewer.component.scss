@@ -6,19 +6,22 @@
     right: 0;
 }
 
+
 .closed {
     left: 0;
 }
 
 .viewerContainer {
     position: absolute;
-    top: 0;
+    top: 30px;
     left: 0;
     bottom: 0;
     right: 0;
     padding: 0 10px;
     overflow-y: auto;
     overflow-x: hidden;
+    .list {
+    }
 }
 
 .panel-footer {
