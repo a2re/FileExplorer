@@ -1,0 +1,15 @@
+.breadcrumb {
+    font-size: 18px;
+    font-weight: bolder;
+    color: gray;
+    padding: 10px;
+    .link {
+        cursor: pointer;
+        padding: 7px;
+        box-sizing: border-box;
+        &:hover {
+            background: #ddd;
+            border-radius: 3px;
+        }
+    }
+}

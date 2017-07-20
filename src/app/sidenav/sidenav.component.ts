@@ -19,9 +19,14 @@ export class SidenavComponent implements OnInit {
   constructor(private directoryService: DirectoryService) { }
 
   ngOnInit() {
-    this.directoryService.getSubDirectories(null).subscribe(data => {
-      this.directories = data;
-    })
+    this.directories = [{
+      name: "Root directory",
+      fullPath: "/",
+      encodedPath: btoa("/"),
+      hasChildren: true
+    }, {
+      name: "Bookmarks"
+    }]
   }
 
   openDirectory(dirPath) {

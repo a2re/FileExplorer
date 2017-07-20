@@ -13,9 +13,8 @@ export class BreadcrumbComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      let encodedPath = params['path'];
-      if(!encodedPath) return;
-      let path = atob(encodedPath);
+      let encodedPath = params['path'];      
+      let path = (!encodedPath) ? "/" : atob(encodedPath);
       let directories = path.split("/");
       this.directories = directories.map((p, i) => {
         let fullPath = (i === 0) ? "/" : directories.slice(0, i + 1).join("/");
@@ -24,7 +23,7 @@ export class BreadcrumbComponent implements OnInit {
           fullPath: fullPath,
           encodedPath: btoa(fullPath)
         }
-      });
+      }).filter(p => p.name !== "");
     });
   }
 

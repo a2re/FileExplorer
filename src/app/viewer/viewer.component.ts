@@ -22,7 +22,8 @@ export class ViewerComponent implements OnInit {
   }
 
   openDirectory(directory) {
-    this.router.navigate(["/directory", directory.encodedPath])
+    if (directory.isDirectory)
+      this.router.navigate(["/directory", directory.encodedPath])
   }
 
 }

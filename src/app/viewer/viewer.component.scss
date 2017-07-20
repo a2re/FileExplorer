@@ -13,14 +13,42 @@
 
 .viewerContainer {
     position: absolute;
-    top: 30px;
+    top: 40px;
     left: 0;
     bottom: 0;
     right: 0;
     padding: 0 10px;
     overflow-y: auto;
     overflow-x: hidden;
-    .list {
+    .file-list {
+        padding: 10px;
+        &:hover {
+            background: #eee;
+        }
+        > div {
+            display: inline-block;
+            position: relative;
+            bottom: 5px;
+        }
+        .fileIcon {
+            position: relative;
+            top: 5px;
+            + span {
+                bottom: 0;
+            }
+        }
+        .file-name {
+            width: calc(100% - 220px);
+        }
+        .file-size, .file-creation-date {
+            text-align: center;
+        }
+        .file-size {
+            width: 100px;
+        }
+        .file-creation-date {
+            width: 100px;
+        }
     }
 }
 

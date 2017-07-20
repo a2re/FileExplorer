@@ -11,30 +11,21 @@
         </div>
       </div>
     </div> -->
-    <table md-table>
-      <thead>
-        <tr md-row>
-          <th md-column><span>Name</span></th>
-          <th md-column><span>Size</span></th>
-          <th md-column><span>Creation</span></th>
-        </tr>
-      </thead>
-      <tbody md-body>
-        <tr md-row *ngFor="let f of content">
-          <td md-cell>
-            <div *ngIf="f.isDirectory" (dblclick)="openDirectory(f)">
-              <md-icon class="fileIcon" md-list-icon>folder</md-icon>
-              <span> {{f.name}}</span>
-            </div>
-            <div *ngIf="!f.isDirectory">
-              <md-icon class="fileIcon" md-list-icon *ngIf="!f.isDirectory">insert_drive_file</md-icon>
-              <span> {{f.name}}</span>
-            </div>
-          </td>
-          <td md-cell hide-gt-xs show-gt-md>{{f.size / (1000*1000) | number:'1.0-2'}}</td>
-          <td md-cell hide-gt-xs show-gt-lg>{{f.ctime | date:"dd/MM/yyyy HH:mm" }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <md-card *ngFor="let f of content" class="file-list" (dblclick)="openDirectory(f)">
+      <div class="file-name">
+      <div *ngIf="f.isDirectory">
+        <md-icon class="fileIcon" md-list-icon>folder</md-icon>
+        <span> {{f.name}}</span>
+      </div>
+      <div *ngIf="!f.isDirectory">
+        <md-icon class="fileIcon" md-list-icon *ngIf="!f.isDirectory">insert_drive_file</md-icon>
+        <span> {{f.name}}</span>
+      </div>
+      </div>
+      <div class="file-size">
+        <span *ngIf="!f.isDirectory">{{f.size / (1000*1000) | number:'1.0-2'}} Mb</span>
+      </div>
+      <div class="file-creation-date">{{f.ctime | date:"dd/MM/yyyy" }}</div>
+    </md-card>
   </div>
 </div>
