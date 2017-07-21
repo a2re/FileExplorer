@@ -1,26 +1,16 @@
 <div class="container">
   <app-breadcrumb></app-breadcrumb>
   <div class="viewerContainer">
-    <!-- <div class="list">
-      <div *ngFor="let f of content">
-        <div *ngIf="f.isDirectory" (dblclick)="openDirectory(f)">
-          <md-icon class="fileIcon" md-list-icon>folder</md-icon> {{f.name}}
-        </div>
-        <div *ngIf="!f.isDirectory">
-          <md-icon class="fileIcon" md-list-icon *ngIf="!f.isDirectory">insert_drive_file</md-icon> {{f.name}}
-        </div>
-      </div>
-    </div> -->
     <md-card *ngFor="let f of content" class="file-list" (dblclick)="openDirectory(f)">
       <div class="file-name">
-      <div *ngIf="f.isDirectory">
-        <md-icon class="fileIcon" md-list-icon>folder</md-icon>
-        <span> {{f.name}}</span>
-      </div>
-      <div *ngIf="!f.isDirectory">
-        <md-icon class="fileIcon" md-list-icon *ngIf="!f.isDirectory">insert_drive_file</md-icon>
-        <span> {{f.name}}</span>
-      </div>
+        <div *ngIf="f.isDirectory">
+          <md-icon class="fileIcon" md-list-icon>folder</md-icon>
+          <span> {{f.name}}</span>
+        </div>
+        <div *ngIf="!f.isDirectory">
+          <md-icon class="fileIcon" md-list-icon *ngIf="!f.isDirectory">insert_drive_file</md-icon>
+          <span> {{f.name}}</span>
+        </div>
       </div>
       <div class="file-size">
         <span *ngIf="!f.isDirectory">{{f.size / (1000*1000) | number:'1.0-2'}} Mb</span>
@@ -28,4 +18,7 @@
       <div class="file-creation-date">{{f.ctime | date:"dd/MM/yyyy" }}</div>
     </md-card>
   </div>
+  <span class="app-action">
+    <button md-fab><md-icon>add</md-icon></button>
+  </span>
 </div>
